@@ -5,9 +5,9 @@ const Reference = styled.div`
   position: relative;
 `;
 
-const StickyHolder = styled.div<{ sticky: boolean; offset?: number }>`
-  position: ${(props) => (props.sticky ? "fixed" : "absolute")};
-  top: ${(props) => (props.sticky ? (props.offset || 0) + "px" : "0")};
+const StickyHolder = styled.div<{ $sticky: boolean; offset?: number }>`
+  position: ${(props) => (props.$sticky ? "fixed" : "absolute")};
+  top: ${(props) => (props.$sticky ? (props.offset || 0) + "px" : "0")};
 `;
 
 interface Props {
@@ -63,15 +63,12 @@ const Sticky = ({ offset, children }: Props) => {
       }
     );
 
-    console.log(allFixedElements);
-
     const itemsOffset = allFixedElements.reduce<number>(
       (acumulator, current) => acumulator + current.clientHeight,
       0
     );
 
     setRealOffset(itemsOffset + (offset || 0));
-    console.log(itemsOffset);
   }, [offset]);
 
   const onScroll = useCallback(() => {
@@ -96,7 +93,7 @@ const Sticky = ({ offset, children }: Props) => {
 
   return (
     <Reference ref={refrenceRef}>
-      <StickyHolder sticky={sticky} offset={realOffset}>
+      <StickyHolder $sticky={sticky} offset={realOffset} data-testid="sticky">
         {children}
       </StickyHolder>
     </Reference>

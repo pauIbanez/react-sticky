@@ -1,6 +1,6 @@
 {
   "name": "react-stickyy",
-  "version": "1.2.4",
+  "version": "1.2.6",
   "description": "",
   "main": "./dist/Sticky.js",
   "types": "./dist/Sticky.d.ts",

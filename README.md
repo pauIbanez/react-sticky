@@ -9,7 +9,7 @@ This component will auto-detect sticky ot fixed elements placed above it in the 
 Using this is very simple. Import the package with:
 
 ```js
-import Sticky from "react-stickyy";
+import Stickyy from "react-stickyy";
 ```
 
 And add your content in it like so:

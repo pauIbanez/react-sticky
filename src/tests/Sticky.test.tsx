@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom/extend-expect";
 import { render, screen } from "@testing-library/react";
-import Stickyy from "./Sticky";
+import Stickyy from "../Sticky";
 
 describe("Given the Sticky component", () => {
   describe("When it's instanciated with no scroll", () => {

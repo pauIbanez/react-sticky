@@ -8,6 +8,15 @@
     "Sticky",
     "Scroll"
   ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pauIbanez/react-sticky.git"
+  },
   "scripts": {
     "build": "tsc",
     "test": "jest --passWithNoTests",

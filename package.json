@@ -1,9 +1,9 @@
 {
   "name": "react-stickyy",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
-  "main": "Sticky.js",
-  "types": "Sticky.d.ts",
+  "main": "./dist/Sticky.js",
+  "types": "./dist/Sticky.d.ts",
   "keywords": [
     "React",
     "Sticky",

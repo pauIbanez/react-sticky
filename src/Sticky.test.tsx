@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom/extend-expect";
 import { render, screen } from "@testing-library/react";
-import Sticky from "./Sticky";
+import Stickyy from "./Sticky";
 
 describe("Given the Sticky component", () => {
   describe("When it's instanciated with no scroll", () => {
@@ -8,9 +8,9 @@ describe("Given the Sticky component", () => {
       const text = "test";
 
       render(
-        <Sticky>
+        <Stickyy>
           <p>{text}</p>
-        </Sticky>
+        </Stickyy>
       );
 
       const foundText = screen.getByText(text);

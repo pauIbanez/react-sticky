@@ -22,7 +22,7 @@ interface Props {
  * @param children - React children.
  */
 
-const Sticky = ({ offset, children }: Props) => {
+const Stickyy = ({ offset, children }: Props) => {
   const [sticky, setSticky] = useState(false);
   const refrenceRef = useRef<HTMLDivElement>(null);
   const [realOffset, setRealOffset] = useState<number>(0);
@@ -100,4 +100,4 @@ const Sticky = ({ offset, children }: Props) => {
   );
 };
 
-export default Sticky;
+export default Stickyy;

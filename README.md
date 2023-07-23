@@ -26,3 +26,7 @@ The Sticky component accepts 2 props, the children and an offset.
 
 - The `children` is the content that you want to be sticky.
 - The `offset` (Optional) is the space (in pixels) it will leave between it and the above fixed/sticky component. If there is no other fixed/sticky element above it, the offset translates to the space between the top of the page and the Sticky component. If there is a sticky/fixed element, for example a navigation bar, then it's the ofset between the navBar and it.
+
+## Known issues and limitations
+
+- At the moment this component `DOES NOT` accept being put in an absolute container. It'll completley break it's functionality. As long as it's inside a relative container it'll work as intended. This feature is on it's way.

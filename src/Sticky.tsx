@@ -1,8 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const Reference = styled.div`
+const Reference = styled.div<{ $height: number; $width: number }>`
   position: relative;
+  height: ${(props) => props.$height}px;
+  width: ${(props) => props.$width}px;
+
+  min-height: ${(props) => props.$height}px;
+  min-width: ${(props) => props.$width}px;
 `;
 
 const StickyHolder = styled.div<{ $sticky: boolean; offset?: number }>`
@@ -25,6 +30,11 @@ interface Props {
 const Stickyy = ({ offset, children }: Props) => {
   const [sticky, setSticky] = useState(false);
   const refrenceRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState<{ height: number; width: number }>({
+    height: 100,
+    width: 100,
+  });
   const [realOffset, setRealOffset] = useState<number>(0);
 
   useEffect(() => {
@@ -91,9 +101,21 @@ const Stickyy = ({ offset, children }: Props) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [onScroll]);
 
+  useEffect(() => {
+    setSize({
+      height: contentRef.current?.clientHeight ?? 100,
+      width: contentRef.current?.clientWidth ?? 100,
+    });
+  }, [contentRef.current?.clientHeight, contentRef.current?.clientWidth]);
+
   return (
-    <Reference ref={refrenceRef}>
-      <StickyHolder $sticky={sticky} offset={realOffset} data-testid="sticky">
+    <Reference ref={refrenceRef} $height={size.height} $width={size.width}>
+      <StickyHolder
+        ref={contentRef}
+        $sticky={sticky}
+        offset={realOffset}
+        data-testid="sticky"
+      >
         {children}
       </StickyHolder>
     </Reference>

@@ -7,7 +7,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "importHelpers": true,
     "declaration": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
